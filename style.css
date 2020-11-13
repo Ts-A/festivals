@@ -1,0 +1,121 @@
+/* background : color image repeat attachment position */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+html{
+  height: 100%;
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+}
+
+body{
+  position: relative;
+  height: 100%;
+  background-color:  rgb(32, 37, 32);
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-auto-rows: minmax(100px,auto);
+  justify-content: center;
+  align-items: center;
+}
+
+#container{
+  border: 1px solid snow;
+  position: absolute;
+  background: url("./diwali-image.jpg") no-repeat scroll;
+  background-position: center;
+  width: 100%;
+  height: 95%;
+  display: grid;
+  z-index: 1;
+  opacity: 0.1;
+}
+
+#content{
+  grid-column: 1/13;
+  justify-self: center;
+  position: absolute;
+  color: #f6ca69;
+  font-size: 40px;
+  display: grid;
+  text-align: center;
+  grid-gap: 16px;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  background-size: auto;
+}
+
+#one,#two,#three{
+  position: relative;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-timing-function: ease-out;
+}
+
+#one{
+  animation-name: sliderone;
+}
+
+#two{
+  animation-name: slidertwo;
+}
+
+#three{
+  animation-name: sliderthree;
+}
+
+#frame{
+  position: absolute;
+  grid-column: 1/13;
+  justify-self: center;
+  animation-name: framer;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+#footer{
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  font-size: 30px;
+  color: rgb(233, 231, 216);
+  grid-column: 1/13;
+}
+
+@media all and (min-width:500px){
+@keyframes framer{
+  0%{
+    rotate: -90deg ;
+  }
+  100%{
+    rotate: 90deg;
+  }
+}
+}
+
+@keyframes sliderone{
+  0%{
+    left:-100vw;
+  }
+  100%{
+    left: 0px;
+  }
+}
+
+@keyframes slidertwo{
+  0%{
+    right: -100vw;
+  }
+  100%{
+    right: 0px;
+  }
+}
+
+@keyframes sliderthree{
+  0%{
+    top:-100vw;
+  }
+  100%{
+    top: 0px;
+  }
+}
